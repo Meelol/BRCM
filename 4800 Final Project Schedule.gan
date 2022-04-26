@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="4800 Final Project Schedule" company="" webLink="http://" view-date="2022-04-14" view-index="0" gantt-divider-location="302" resource-divider-location="300" version="3.2.3240" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="4800 Final Project Schedule" company="" webLink="http://" view-date="2022-03-29" view-index="0" gantt-divider-location="462" resource-divider-location="300" version="3.2.3240" locale="en_US">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Name" width="150" order="0"/>
-        <field id="tpd4" name="Begin date" width="75" order="1"/>
-        <field id="tpd5" name="End date" width="75" order="2"/>
+        <field id="tpd3" name="Name" width="230" order="0"/>
+        <field id="tpd4" name="Begin date" width="105" order="1"/>
+        <field id="tpd5" name="End date" width="126" order="2"/>
         <option id="filter.completedTasks" value="false"/>
     </view>
     <view id="resource-table">
@@ -34,11 +34,39 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Requirements Documentation" color="#8cb6ce" meeting="false" start="2022-04-18" duration="4" complete="57" thirdDate="2022-04-26" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Requirements Documentation" color="#8cb6ce" meeting="false" project="true" start="2022-04-01" duration="20" complete="26" thirdDate="2022-04-26" thirdDate-constraint="0" expand="false">
             <task id="2" name="Use Case Diagram" color="#8cb6ce" meeting="false" start="2022-04-18" duration="3" complete="95" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
             <task id="4" name="Use Case Specification" color="#8cb6ce" meeting="false" start="2022-04-20" duration="2" complete="0" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
+            <task id="5" name="Wireframe Prototype" color="#8cb6ce" meeting="false" start="2022-04-22" duration="4" complete="55" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
+            <task id="6" name="High-Level Goals" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-04-07" thirdDate-constraint="0" priority="0" expand="true"/>
+            <task id="7" name="Assumptions" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true"/>
+            <task id="9" name="Domain Properties" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-03-30" thirdDate-constraint="0" expand="true"/>
+            <task id="24" name="task_24" meeting="false" start="2022-04-01" duration="1" complete="0" expand="true"/>
+            <task id="22" name="Traceability Matrix" color="#8cb6ce" meeting="false" start="2022-04-26" duration="3" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="5" name="Wireframe Prototype" meeting="false" start="2022-04-14" duration="1" complete="0" expand="true"/>
+        <task id="10" name="Project Planning Document" color="#8cb6ce" meeting="false" project="true" start="2022-04-20" duration="12" complete="0" thirdDate="2022-03-31" thirdDate-constraint="0" expand="false">
+            <task id="11" name="Gantt Project Schedule" color="#8cb6ce" meeting="false" start="2022-04-20" duration="1" complete="0" thirdDate="2022-03-31" thirdDate-constraint="0" expand="true">
+                <notes>
+                    <![CDATA[
+]]>
+                </notes>
+            </task>
+            <task id="15" name="Calculate Size" color="#8cb6ce" meeting="false" start="2022-04-21" duration="1" complete="0" thirdDate="2022-03-31" thirdDate-constraint="0" expand="false"/>
+            <task id="16" name="Allocate Resource" color="#8cb6ce" meeting="false" start="2022-04-21" duration="1" complete="0" thirdDate="2022-03-23" thirdDate-constraint="0" expand="true"/>
+            <task id="21" name="Presentation Document" color="#8cb6ce" meeting="true" start="2022-05-06" duration="0" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" priority="2" expand="true"/>
+            <task id="17" name="Descriptions of Req Engineering" color="#8cb6ce" meeting="true" start="2022-04-29" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+            <task id="18" name="Descriptions of Design" color="#8cb6ce" meeting="true" start="2022-04-29" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+            <task id="19" name="Descriptions of Implementation" color="#8cb6ce" meeting="true" start="2022-04-29" duration="0" complete="0" thirdDate="2022-03-22" thirdDate-constraint="0" expand="true"/>
+            <task id="20" name="Descriptions of Testing" color="#8cb6ce" meeting="true" start="2022-04-29" duration="0" complete="0" thirdDate="2022-03-22" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="25" name="Design" color="#8cb6ce" meeting="false" project="true" start="2022-04-28" duration="2" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="false">
+            <task id="26" name="ER Diagram" color="#8cb6ce" meeting="false" start="2022-04-28" duration="1" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
+            <task id="27" name="Data Logical Model" color="#8cb6ce" meeting="false" start="2022-04-28" duration="2" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
+            <task id="28" name="System Architecture View" color="#8cb6ce" meeting="false" start="2022-04-28" duration="2" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
+            <task id="29" name="Class Diagram" color="#8cb6ce" meeting="false" start="2022-04-28" duration="2" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="30" name="Implementation" meeting="false" start="2022-04-01" duration="1" complete="0" expand="true"/>
+        <task id="31" name="Testing" meeting="false" start="2022-04-01" duration="1" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="1" name="Nathan Lee" function="1" contacts="" phone=""/>
@@ -48,7 +76,14 @@
         <resource id="5" name="Edgar Rodriguez" function="5" contacts="" phone=""/>
     </resources>
     <allocations>
+        <allocation task-id="16" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="15" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="1" responsible="false" load="100.0"/>
         <allocation task-id="0" resource-id="2" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="25" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="30" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="31" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
