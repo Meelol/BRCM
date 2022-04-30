@@ -1,6 +1,6 @@
 import java.time.Month;
 
-import BRCM_classes.*;
+import classes.*;
 
 public class Main {
     // CLASSES TEST
