@@ -1,3 +1,4 @@
+package BRCM_classes;
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -22,7 +23,7 @@ public class Student extends Customer {
     public String printDiscountType(){
         return "STUDENT";
     }
-    
+
     public void setMinor(String minor) {
         this.minor = minor;
     }

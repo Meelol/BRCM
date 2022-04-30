@@ -1,3 +1,4 @@
+package BRCM_classes;
 public class Product {
     private int productID;
     private String name;
