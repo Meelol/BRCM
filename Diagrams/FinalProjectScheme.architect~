@@ -265,10 +265,10 @@
     <column-mapping id="CMP74" populated="true" UUID="acec95d9-3448-482c-b581-561de9369b4d" fk-column-ref="COL59" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
    <relationship id="REL75" populated="true" UUID="47a03b9b-adf0-42ad-96df-a634bcb683a6" deferrability="7" deleteRule="3" fk-table-ref="TAB17" fkCardinality="7" identifying="true" name="ORDER_orderTicket_fk" physicalName="ORDER_orderTicket_fk" pk-table-ref="TAB10" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP76" populated="true" UUID="158e0233-53a7-4923-82be-b13309defbb2" fk-column-ref="COL18" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
+    <column-mapping id="CMP76" populated="true" UUID="cd817280-06f5-4fb6-aec6-2a33c4bf685a" fk-column-ref="COL18" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL11" />
    </relationship>
    <relationship id="REL77" populated="true" UUID="428c8b6d-3f36-445c-9684-5b2d58babf01" deferrability="7" deleteRule="3" fk-table-ref="TAB17" fkCardinality="7" identifying="true" name="PRODUCT_productQuantity_fk" physicalName="PRODUCT_productQuantity_fk" pk-table-ref="TAB24" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP78" populated="true" UUID="ce030348-bd38-401c-8929-1c5db5a21606" fk-column-ref="COL19" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL25" />
+    <column-mapping id="CMP78" populated="true" UUID="1331aba1-27e4-4673-a059-07329a769194" fk-column-ref="COL19" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL25" />
    </relationship>
    <relationship id="REL79" populated="true" UUID="ba6265cf-1ef9-4cbd-b043-81a1138d4557" deferrability="7" deleteRule="3" fk-table-ref="TAB53" fkCardinality="7" identifying="true" name="PRODUCT_ACTIVITY_fk" physicalName="PRODUCT_ACTIVITY_fk" pk-table-ref="TAB24" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP80" populated="true" UUID="5db8fb04-ba5a-4b8f-8176-01c045e7834c" fk-column-ref="COL54" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL25" />

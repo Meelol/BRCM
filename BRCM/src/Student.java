@@ -10,13 +10,20 @@ public class Student extends Customer {
 
     public Student(int broncoID, String name, String phoneNumber, String street,
             int unitNumber, String city, String state, int zipCode,
-            int year, Month month, int day, String major, String minor,
-            int enterYear, Month enterMonth, int enterDay, int gradDay, Month gradMonth, int gradYear) {
+            int year, Month month, int day, String major, int enterYear, Month enterMonth, int enterDay,
+            int gradYear, Month gradMonth, int gradDay) {
         super(broncoID, name, phoneNumber, street, unitNumber, city, state, zipCode, year, month, day);
         this.major = major;
-        this.minor = minor;
         this.enterDate = LocalDate.of(enterYear, enterMonth, enterDay);
         this.gradDate = LocalDate.of(gradYear, gradMonth, gradDay);
         this.setDiscountScheme(this.status);
+    }
+
+    public String printDiscountType(){
+        return "STUDENT";
+    }
+    
+    public void setMinor(String minor) {
+        this.minor = minor;
     }
 }

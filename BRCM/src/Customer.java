@@ -33,4 +33,12 @@ public class Customer {
             this.discountScheme = (float) 0.15;
         }
     }
+
+    public float getDiscountScheme() {
+        return this.discountScheme;
+    }
+
+    public int getBroncoID() {
+        return this.broncoID;
+    }
 }
