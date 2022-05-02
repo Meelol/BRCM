@@ -1,4 +1,4 @@
-package classes;
+package model.classes;
 import java.time.LocalTime;
 import java.util.HashMap;
 import java.time.LocalDate;

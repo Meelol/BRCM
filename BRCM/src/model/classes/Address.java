@@ -1,4 +1,4 @@
-package classes;
+package model.classes;
 public class Address {
     private String street;
     private int unitNumber;
