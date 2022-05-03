@@ -1,4 +1,5 @@
 package model.classes;
+
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -8,6 +9,7 @@ public class Customer {
     }
 
     private int broncoID;
+    private String password;
     private String name;
     private String phoneNumber;
     private Address address;
@@ -15,10 +17,11 @@ public class Customer {
     private float discountScheme = (float) 0.0;
     private Status status = null;
 
-    public Customer(int broncoID, String name, String phoneNumber, String street,
+    public Customer(int broncoID, String password, String name, String phoneNumber, String street,
             int unitNumber, String city, String state, int zipCode,
             int year, Month month, int day) {
         this.broncoID = broncoID;
+        this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = new Address(street, unitNumber, city, state, zipCode);
