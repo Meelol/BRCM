@@ -13,13 +13,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: ffb717;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffb717;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.SignUpController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #105E26;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
          <children>
-            <VBox prefHeight="42.0" prefWidth="740.0">
+            <VBox prefHeight="35.0" prefWidth="740.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #105E26;" textAlignment="CENTER">
+                  <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#SwitchToLoginScene" style="-fx-background-color: #105E26;" textAlignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -30,111 +30,120 @@
                   </Button>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="79.0" prefWidth="740.0">
+            <FlowPane alignment="CENTER" layoutY="41.0" prefHeight="507.0" prefWidth="740.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
-                     <font>
-                        <Font name="Haettenschweiler" size="45.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
-            <FlowPane alignment="CENTER" layoutX="167.0" layoutY="79.0" prefHeight="200.0" prefWidth="465.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <VBox prefHeight="401.0" prefWidth="284.0" spacing="10.0">
+                  <HBox prefHeight="498.0" prefWidth="535.0">
                      <children>
-                        <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                        <VBox alignment="CENTER" prefHeight="439.0" prefWidth="228.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BroncoID">
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../res/BroncoHorse.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                                  <font>
-                                    <Font name="MS Outlook" size="18.0" />
+                                    <Font name="Haettenschweiler" size="45.0" />
                                  </font>
                               </Text>
-                              <TextField />
                            </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
                         </VBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="498.0" prefWidth="295.0" spacing="10.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name">
-                                 <font>
-                                    <Font name="MS Outlook" size="18.0" />
-                                 </font>
-                              </Text>
-                              <TextField />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="52.0" prefWidth="200.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-                                 <font>
-                                    <Font name="MS Outlook" size="18.0" />
-                                 </font>
-                              </Text>
-                              <PasswordField />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
-                                 <font>
-                                    <Font name="MS Outlook" size="18.0" />
-                                 </font>
-                              </Text>
-                              <TextField />
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street">
-                                 <font>
-                                    <Font name="MS Outlook" size="18.0" />
-                                 </font>
-                              </Text>
-                              <TextField />
-                           </children>
-                        </VBox>
-                        <HBox prefHeight="63.0" prefWidth="284.0" spacing="10.0">
-                           <children>
-                              <VBox prefHeight="101.0" prefWidth="142.0">
+                              <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
                                  <children>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BroncoID">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="broncoIDTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="fullNameTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="52.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <PasswordField fx:id="passwordTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="phoneNumberTextField" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="streenTextField" />
+                                 </children>
+                              </VBox>
+                              <HBox prefHeight="63.0" prefWidth="284.0" spacing="10.0">
+                                 <children>
+                                    <VBox prefHeight="101.0" prefWidth="142.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
-                                             <font>
-                                                <Font name="MS Outlook" size="18.0" />
-                                             </font>
-                                          </Text>
-                                          <TextField />
+                                          <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
+                                                   <font>
+                                                      <Font name="MS Outlook" size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="cityTextField" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="101.0" prefWidth="143.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZipCode">
+                                                   <font>
+                                                      <Font name="MS Outlook" size="18.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="zipCodeTextField" />
+                                             </children>
+                                          </VBox>
                                        </children>
                                     </VBox>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="101.0" prefWidth="143.0">
+                              </HBox>
+                              <VBox alignment="CENTER" prefHeight="44.0" prefWidth="284.0">
                                  <children>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZipCode">
-                                             <font>
-                                                <Font name="MS Outlook" size="18.0" />
-                                             </font>
-                                          </Text>
-                                          <TextField />
-                                       </children>
-                                    </VBox>
+                                    <Button fx:id="signMeUpButton" mnemonicParsing="false" text="Sign Me Up" />
                                  </children>
                               </VBox>
-                           </children>
-                        </HBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="284.0">
-                           <children>
-                              <Button mnemonicParsing="false" text="Sign Me Up" />
                            </children>
                         </VBox>
                      </children>
-                     <FlowPane.margin>
-                        <Insets top="100.0" />
-                     </FlowPane.margin>
-                  </VBox>
+                  </HBox>
                </children>
             </FlowPane>
          </children>
