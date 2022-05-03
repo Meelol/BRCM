@@ -17,14 +17,14 @@ public class Customer {
     private float discountScheme = (float) 0.0;
     private Status status = null;
 
-    public Customer(int broncoID, String password, String name, String phoneNumber, String street,
-            int unitNumber, String city, String state, int zipCode,
+    public Customer(int broncoID, String password, String name, String phoneNumber,
+            String street, String city, String state, int zipCode,
             int year, Month month, int day) {
         this.broncoID = broncoID;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.address = new Address(street, unitNumber, city, state, zipCode);
+        this.address = new Address(street, city, state, zipCode);
         this.DOB = LocalDate.of(year, month, day);
     }
 
