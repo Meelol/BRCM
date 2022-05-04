@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 
+import java.sql.*;
+
 public class LoginController {
 
     @FXML
@@ -33,6 +35,10 @@ public class LoginController {
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void switchToMainMenuScene(ActionEvent event) throws IOException {
+        System.out.println("User successfully logs in!");
     }
 
 }
