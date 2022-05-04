@@ -2,17 +2,33 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.sql.*;
 
+
 public class Main extends Application {
 
-    Button button;
+    // Database URL
+    static final String DB_URL = "jdbc:postgresql://localhost/BRCM";
+    // Database Credentials
+    static final String USER = "postgres"; // Default user name should be "postgres" unless you changed it.
+    static final String PASS = System.getenv("POSTGRE_PASSWORD"); // Replace "System.getenv()" with a String containing
+                                                                  // your database password.
 
     public static void main(String[] args) {
-        launch(args);
+        try {
+            // DB Connection
+            System.out.println("Connecting to database...");
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            System.out.println("Connection Successful!");
+            // Launch GUI
+            launch(args);
+            conn.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
     }
 
     @Override
