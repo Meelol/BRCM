@@ -7,7 +7,7 @@ public class DBConnect {
     // Database Credentials
     static final String USER = "postgres"; // Default user name should be "postgres" unless you changed it.
     static final String PASS = System.getenv("POSTGRE_PASSWORD");
-    public static Connection conn = startConnection();
+    public static Connection conn;
     
     public static Connection startConnection(){
         try {
