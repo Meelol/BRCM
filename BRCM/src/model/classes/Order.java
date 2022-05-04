@@ -1,4 +1,5 @@
 package model.classes;
+
 import java.time.LocalTime;
 import java.util.HashMap;
 import java.time.LocalDate;
@@ -10,6 +11,8 @@ public class Order {
     private LocalTime time;
     private float totalPrice;
     private HashMap<Product, Integer> products = new HashMap<Product, Integer>();
+
+    private static int orderNumber = 0;
 
     public Order(int orderID, int broncoID) {
         this.orderID = orderID;
@@ -30,9 +33,13 @@ public class Order {
         return this.totalPrice;
     }
 
-    public int getOrderID()
-    {
+    public int getOrderID() {
         return this.orderID;
+    }
+
+    public int increaseOrderNum() {
+        Order.orderNumber++;
+        return Order.orderNumber;
     }
 
 }
