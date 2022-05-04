@@ -65,7 +65,7 @@
                                        <children>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <Button fx:id="logInButton" mnemonicParsing="false" text="Log In" />
+                                                <Button fx:id="logInButton" mnemonicParsing="false" onAction="#clickLogIn" text="Log In" />
                                              </children>
                                           </HBox>
                                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
