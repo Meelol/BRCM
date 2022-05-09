@@ -9,14 +9,23 @@
       "name": "Launch Main",
       "request": "launch",
       "mainClass": "Main",
+      "projectName": "Final-Project_a2baa895",
+      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
       "projectName": "Final Project_fdb47a27",
-      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18/lib\" --add-modules javafx.controls,javafx.fxml"
+      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
     },
     {
       "type": "java",
       "name": "Launch Current File",
       "request": "launch",
-      "mainClass": "${file}"
+      "mainClass": "${file}",
+      "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
     }
   ]
 }
