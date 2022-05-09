@@ -13,19 +13,19 @@ public class Customer {
     private String name;
     private String phoneNumber;
     private Address address;
-    private LocalDate DOB;
+    private String DOB;
     private float discountScheme = (float) 0.0;
     private Status status = null;
 
     public Customer(int broncoID, String password, String name, String phoneNumber,
             String street, String city, String state, int zipCode,
-            int year, Month month, int day) {
+            String DOB) {
         this.broncoID = broncoID;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = new Address(street, city, state, zipCode);
-        this.DOB = LocalDate.of(year, month, day);
+        this.DOB = DOB;
     }
 
     public void setDiscountScheme(Status status) {
@@ -42,7 +42,41 @@ public class Customer {
         return this.discountScheme;
     }
 
+    public int getStatus(){
+        return this.status.ordinal();
+    }
+
     public int getBroncoID() {
         return this.broncoID;
     }
+
+    public String getPassword(){
+        return this.password;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+    public String getDOB(){
+        return this.DOB;
+    }
+    public String getStreet(){
+        return address.getStreet();
+    }
+    public String getCity(){
+        return address.getCity();
+    }
+    public String getState(){
+        return address.getState();
+    }
+    public int getZipCode(){
+        return address.getZipCode();
+    }
+    public void setStatus(Status s){
+        this.status = s;
+    }
+
+
 }

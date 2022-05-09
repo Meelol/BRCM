@@ -9,7 +9,7 @@ public class DBConnect {
     static final String PASS = System.getenv("POSTGRE_PASSWORD");
     public static Connection conn;
     
-    public static Connection startConnection(){
+    public static Connection startConnection() {
         try {
             // DB Connection
             System.out.println("Connecting to database...");
@@ -17,8 +17,7 @@ public class DBConnect {
             System.out.println("Connection Successful!");
             return conn;
         } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
+            e.printStackTrace();
         }
         return null;
     }

@@ -91,7 +91,7 @@
                                           <Font name="MS Outlook" size="18.0" />
                                        </font>
                                     </Text>
-                                    <TextField fx:id="phoneNumberTextField1" />
+                                    <TextField fx:id="dobTextField" />
                                  </children>
                               </VBox>
                               <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
@@ -111,7 +111,7 @@
                                           <Font name="MS Outlook" size="18.0" />
                                        </font>
                                     </Text>
-                                    <TextField fx:id="streenTextField" />
+                                    <TextField fx:id="streetTextField" />
                                  </children>
                               </VBox>
                               <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="195.0" spacing="10.0">
@@ -123,7 +123,7 @@
                                                 <Font name="MS Outlook" size="18.0" />
                                              </font>
                                           </Text>
-                                          <TextField fx:id="StateTextField" />
+                                          <TextField fx:id="stateTextField" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT" prefHeight="58.0" prefWidth="89.0">
@@ -162,15 +162,15 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <CheckBox mnemonicParsing="false" text="Professor">
+                              <CheckBox fx:id="professorCheckBox" mnemonicParsing="false" text="Professor">
                                  <font>
                                     <Font name="MS Outlook" size="12.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Student" />
+                              <CheckBox fx:id="studentCheckBox" mnemonicParsing="false" text="Student" />
                               <VBox alignment="CENTER" prefHeight="44.0" prefWidth="284.0">
                                  <children>
-                                    <Button fx:id="signMeUpButton" mnemonicParsing="false" text="Sign Me Up" />
+                                    <Button fx:id="signMeUpButton" mnemonicParsing="false" onAction="#signMeUp" text="Sign Me Up" />
                                  </children>
                               </VBox>
                            </children>
