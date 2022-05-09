@@ -17,8 +17,7 @@ public class DBConnect {
             System.out.println("Connection Successful!");
             return conn;
         } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
+            e.printStackTrace();
         }
         return null;
     }
