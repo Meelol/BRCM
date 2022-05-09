@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Month;
 
 public class Customer {
-    protected enum Status {
+    public static enum Status {
         STUDENT, PROFESSOR, BOTH
     }
 

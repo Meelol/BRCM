@@ -1,10 +1,12 @@
 package model;
 
 import java.sql.*;
+import model.classes.Customer;
+import model.classes.Customer.Status;
 
 public class LoginModel {
     static Connection conn = null;
-
+    Customer.Status s = Status.BOTH;
     public static boolean checkCredentials(String username, String password){
         conn = DBConnect.startConnection();
         try{
