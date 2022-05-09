@@ -114,35 +114,51 @@
                                     <TextField fx:id="streenTextField" />
                                  </children>
                               </VBox>
-                              <HBox prefHeight="63.0" prefWidth="284.0" spacing="10.0">
+                              <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="195.0" spacing="10.0">
                                  <children>
-                                    <VBox prefHeight="101.0" prefWidth="142.0">
+                                    <VBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="116.0">
                                        <children>
-                                          <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State">
+                                             <font>
+                                                <Font name="MS Outlook" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="StateTextField" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_RIGHT" prefHeight="58.0" prefWidth="89.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="86.0">
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
                                                    <font>
                                                       <Font name="MS Outlook" size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <TextField fx:id="cityTextField" />
+                                                <TextField fx:id="cityTextField" prefHeight="26.0" prefWidth="86.0" />
                                              </children>
                                           </VBox>
                                        </children>
                                     </VBox>
-                                    <VBox prefHeight="101.0" prefWidth="143.0">
+                                    <VBox prefHeight="58.0" prefWidth="78.0">
                                        <children>
-                                          <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                          <VBox prefHeight="17.0" prefWidth="76.0">
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZipCode">
                                                    <font>
                                                       <Font name="MS Outlook" size="18.0" />
                                                    </font>
                                                 </Text>
-                                                <TextField fx:id="zipCodeTextField" />
+                                                <TextField fx:id="zipCodeTextField" prefHeight="46.0" prefWidth="76.0" />
                                              </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
                                           </VBox>
                                        </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
                                     </VBox>
                                  </children>
                               </HBox>
