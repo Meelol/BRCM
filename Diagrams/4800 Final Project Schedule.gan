@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="4800 Final Project Schedule" company="" webLink="http://" view-date="2022-03-27" view-index="0" gantt-divider-location="447" resource-divider-location="360" version="3.2.3210" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="4800 Final Project Schedule" company="" webLink="http://" view-date="2022-04-03" view-index="0" gantt-divider-location="447" resource-divider-location="360" version="3.2.3210" locale="en_US">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart">
+    <view zooming-state="default:5" id="gantt-chart">
         <field id="tpd3" name="Name" width="230" order="0"/>
         <field id="tpd4" name="Begin date" width="90" order="1"/>
         <field id="tpd5" name="End date" width="126" order="2"/>
@@ -34,14 +34,14 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Requirements Documentation" color="#8cb6ce" meeting="false" project="true" start="2022-04-18" duration="10" complete="49" thirdDate="2022-04-26" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Requirements Documentation" color="#8cb6ce" meeting="false" project="true" start="2022-04-18" duration="10" complete="97" thirdDate="2022-04-26" thirdDate-constraint="0" expand="true">
             <task id="2" name="Use Case Diagram" color="#8cb6ce" meeting="false" start="2022-04-19" duration="3" complete="95" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
             <task id="4" name="Use Case Specification" color="#8cb6ce" meeting="false" start="2022-04-21" duration="2" complete="100" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
             <task id="5" name="Wireframe Prototype" color="#8cb6ce" meeting="false" start="2022-04-18" duration="4" complete="100" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
-            <task id="6" name="High-Level Goals" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-04-07" thirdDate-constraint="0" priority="0" expand="true"/>
-            <task id="7" name="Assumptions" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true"/>
-            <task id="9" name="Domain Properties" color="#8cb6ce" meeting="false" start="2022-04-28" duration="2" complete="0" thirdDate="2022-03-30" thirdDate-constraint="0" expand="true"/>
-            <task id="22" name="Traceability Matrix" color="#8cb6ce" meeting="false" start="2022-04-26" duration="3" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
+            <task id="6" name="High-Level Goals" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="100" thirdDate="2022-04-07" thirdDate-constraint="0" priority="0" expand="true"/>
+            <task id="7" name="Assumptions" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="100" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true"/>
+            <task id="9" name="Domain Properties" color="#8cb6ce" meeting="false" start="2022-04-28" duration="2" complete="100" thirdDate="2022-03-30" thirdDate-constraint="0" expand="true"/>
+            <task id="22" name="Traceability Matrix" color="#8cb6ce" meeting="false" start="2022-04-26" duration="3" complete="90" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="10" name="Project Planning Document" color="#8cb6ce" meeting="false" project="true" start="2022-04-18" duration="5" complete="100" thirdDate="2022-03-31" thirdDate-constraint="0" expand="true">
             <task id="11" name="Gantt Project Schedule" color="#8cb6ce" meeting="false" start="2022-04-18" duration="3" complete="100" thirdDate="2022-03-31" thirdDate-constraint="0" expand="true">
@@ -60,11 +60,11 @@
             <task id="28" name="System Architecture View" color="#8cb6ce" meeting="false" start="2022-04-26" duration="2" complete="100" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
             <task id="29" name="Class Diagram" color="#8cb6ce" meeting="false" start="2022-04-26" duration="3" complete="100" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="30" name="Implementation" meeting="false" start="2022-04-28" duration="9" complete="25" expand="true">
+        <task id="30" name="Implementation" meeting="false" start="2022-04-28" duration="9" complete="85" expand="true">
             <task id="32" name="Implement Class Diagram" color="#8cb6ce" meeting="false" start="2022-04-28" duration="3" complete="100" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
-            <task id="34" name="Implement View" color="#8cb6ce" meeting="false" start="2022-05-02" duration="3" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
-            <task id="35" name="Implement Model" color="#8cb6ce" meeting="false" start="2022-05-04" duration="3" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
-            <task id="36" name="Implement Controller" color="#8cb6ce" meeting="false" start="2022-05-06" duration="3" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+            <task id="34" name="Implement View" color="#8cb6ce" meeting="false" start="2022-05-02" duration="3" complete="100" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+            <task id="35" name="Implement Model" color="#8cb6ce" meeting="false" start="2022-05-04" duration="3" complete="90" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+            <task id="36" name="Implement Controller" color="#8cb6ce" meeting="false" start="2022-05-06" duration="3" complete="50" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="31" name="Testing" color="#8cb6ce" meeting="false" start="2022-05-10" duration="3" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true"/>
     </tasks>
