@@ -86,6 +86,16 @@
                               </VBox>
                               <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
                                  <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DOB">
+                                       <font>
+                                          <Font name="MS Outlook" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="phoneNumberTextField1" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0">
+                                 <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
                                        <font>
                                           <Font name="MS Outlook" size="18.0" />
