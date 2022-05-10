@@ -115,7 +115,7 @@
                            <children>
                               <HBox prefHeight="29.0" prefWidth="598.0">
                                  <children>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #105E26;" text="Go Back">
+                                    <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#switchToMainMenuScene" style="-fx-background-color: #105E26;" text="Go Back">
                                        <graphic>
                                           <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -135,7 +135,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="logOutButton" mnemonicParsing="false" text="Log Out">
+                              <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#switchToLoginScene" text="Log Out">
                                  <HBox.margin>
                                     <Insets left="20.0" right="20.0" />
                                  </HBox.margin>

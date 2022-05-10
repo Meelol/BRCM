@@ -44,6 +44,10 @@ public class ProductsController {
     @FXML
     private TextField searchClothesTextField;
     @FXML
+    private Button goBackButton;
+    @FXML
+    private Button logOutButton;
+    @FXML
     private TableView<Product> productsTableView;
     @FXML
     private TableColumn<Product, String> nameTableColumn;
