@@ -1,11 +1,8 @@
 package model.classes;
 
-import java.time.LocalDate;
-import java.time.Month;
-
 public class Customer {
     public static enum Status {
-        STUDENT, PROFESSOR, BOTH
+        STUDENT, PROFESSOR, BOTH, STAFF
     }
 
     private int broncoID;

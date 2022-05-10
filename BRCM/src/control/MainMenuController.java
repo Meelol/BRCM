@@ -69,5 +69,5 @@ public class MainMenuController {
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
-}
+    }
 }

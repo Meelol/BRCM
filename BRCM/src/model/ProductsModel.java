@@ -9,7 +9,7 @@ public class ProductsModel {
 
     public static ResultSet getListOfFood() {
         conn = DBConnect.startConnection();
-        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" < 2000 ;";
+        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" < 2000 AND P.\"productID\" >= 1000 ;";
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);

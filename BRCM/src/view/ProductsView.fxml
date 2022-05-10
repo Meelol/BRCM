@@ -30,7 +30,7 @@
                                        <children>
                                           <ScrollPane hbarPolicy="ALWAYS" layoutX="7.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="282.0" prefWidth="367.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <content>
-                                                <AnchorPane prefHeight="628.0" prefWidth="593.0">
+                                                <AnchorPane prefHeight="628.0" prefWidth="314.0">
                                                    <children>
                                                       <TableView fx:id="productsTableView" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
@@ -58,9 +58,9 @@
                                        <children>
                                           <ScrollPane hbarPolicy="ALWAYS" layoutX="7.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="282.0" prefWidth="367.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <content>
-                                                <AnchorPane prefHeight="628.0" prefWidth="593.0">
+                                                <AnchorPane prefHeight="628.0" prefWidth="306.0">
                                                    <children>
-                                                      <TableView fx:id="productsTableView1" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                                      <TableView fx:id="productsTableView1" layoutX="-138.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <columns>
                                                             <TableColumn fx:id="nameTableColumn1" prefWidth="75.0" text="Name" />
                                                             <TableColumn fx:id="priceTableColumn1" prefWidth="75.0" text="Price" />

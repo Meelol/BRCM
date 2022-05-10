@@ -50,7 +50,16 @@ public class LoginController {
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
-        //MainMenuController.updateWelcomeText();
+    }
+
+    // Switch to MainMenuView if user successfully logs in.
+    public void switchToManagementScene(ActionEvent event) throws IOException {
+        System.out.println("Staff successfully logs in!");
+        this.root = FXMLLoader.load(getClass().getResource("../view/ManagementView.fxml"));
+        this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        this.scene = new Scene(this.root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     // Click on logInButton checks credentials through LoginModel and acts
@@ -73,8 +82,13 @@ public class LoginController {
         }
 
         else if (LoginModel.checkCredentials(broncoIDTextField.getText(), passwordField.getText())) {
-            broncoID = broncoIDTextField.getText();
-            switchToMainMenuScene(event);
+            if(LoginModel.isStaff(broncoIDTextField.getText(), passwordField.getText())) {
+                switchToManagementScene(event);
+            } else {
+                broncoID = broncoIDTextField.getText();
+                switchToMainMenuScene(event);
+            }
+
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.getDialogPane().setContentText("Username and password don't match.");
