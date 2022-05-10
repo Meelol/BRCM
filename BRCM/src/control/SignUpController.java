@@ -74,7 +74,13 @@ public class SignUpController {
             valid = false;
             System.out.println("Invalid broncoID");
         }
-        
+        else {
+            broncoID = Integer.parseInt(broncoIDText);
+        }
+        if (broncoID == -1) {
+            valid = false;
+            System.out.println("Invalid broncoID");
+        }
         String fullName = fullNameTextField.getText();
         String password = passwordTextField.getText();
         String phoneNumber = phoneNumberTextField.getText();
