@@ -66,24 +66,57 @@ public class SignUpController {
         int broncoID = -1;
         String broncoIDText = broncoIDTextField.getText();
         // make sure broncoID is not empty and only has digits
-        if (broncoIDText == null) {
+        if (broncoIDText == null || broncoIDText.equals("")) {
             valid = false;
-            System.out.println("Invalid broncoID");
+            System.out.println("Blank broncoID");
         }
         else if (!broncoIDText.matches("[0-9]+")) {
             valid = false;
-            System.out.println("Invalid broncoID");
+            System.out.println("BroncoID must only contain digits");
         }
         else {
             broncoID = Integer.parseInt(broncoIDText);
         }
+        // check if broncoID actually changed (could be a JUnit test?)
         if (broncoID == -1) {
             valid = false;
-            System.out.println("Invalid broncoID");
+            System.out.println("BroncoID returned -1");
         }
         String fullName = fullNameTextField.getText();
+        // make sure Full Name is not blank
+        if (fullName == null || fullName.equals("")) {
+            valid = false;
+            System.out.println("Blank Full Name");
+        }
+        // make sure Full Name only contains letters
+        else if (!fullName.matches("[ a-zA-Z]+")) {
+            valid = false;
+            System.out.println("Full Name must only contain letters");
+        }
+
         String password = passwordTextField.getText();
+        // make sure password is not blank
+        if (password == null || password.equals("")) {
+            valid = false;
+            System.out.println("Blank password");
+        }
+        else if (!password.matches("[a-zA-Z0-9]+")) {
+            valid = false;
+            System.out.println("Password must only contain letters and numbers");
+        }
+        
         String phoneNumber = phoneNumberTextField.getText();
+        // make sure phoneNumber is not blank
+        if (phoneNumber == null || phoneNumber.equals("")) {
+            valid = false;
+            System.out.println("Blank phone number");
+        }
+        // make sure phoneNumber is only digits
+        else if (phoneNumber.matches("[0-9]+")) {
+            valid = false;
+            System.out.println("Phone number must only be digits");
+        }
+
         String street = streetTextField.getText();
         String city = cityTextField.getText();
         String state = stateTextField.getText();
