@@ -16,13 +16,13 @@ public class SignUpModel {
                     + ", \'"+ customer.getDOB() + "\', " + customer.getDiscountScheme() + ", "+ customer.getStatus() + ");";
         String insertAddresssql = "INSERT INTO public.\"Address\"(\"broncoID\", street, \"zipCode\", city, state) VALUES (" 
                                   + customer.getBroncoID() + ",\'" + customer.getStreet() + "\'," + customer.getZipCode() 
-                                  + ", \'" + customer.getCity() + "\', \'" + customer.getState() + "\');";
-        System.out.println("Customer added successfully!");  
+                                  + ", \'" + customer.getCity() + "\', \'" + customer.getState() + "\');"; 
 
         try{
             Statement stmnt = conn.createStatement();
             stmnt.executeUpdate(insertCustomersql);
             stmnt.executeUpdate(insertAddresssql);
+            System.out.println("Customer added successfully!"); 
 
         } catch(Exception e) {
             e.printStackTrace();
