@@ -62,4 +62,12 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToShoppingCartScene(ActionEvent event) throws IOException {
+        this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCart.fxml"));
+        this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        this.scene = new Scene(this.root);
+        stage.setScene(scene);
+        stage.show();
+}
 }

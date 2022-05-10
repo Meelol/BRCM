@@ -6,7 +6,7 @@ public class ProductsModel {
     static Connection conn = null;
     public static ResultSet getListOfProducts(){
         conn = DBConnect.startConnection();
-        String query = "SELECT name, \"currentPrice\" FROM public.\"PRODUCTS\";";
+        String query = "SELECT * FROM public.\"PRODUCTS\";";
         try{
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);

@@ -32,7 +32,7 @@
                                              <content>
                                                 <AnchorPane prefHeight="628.0" prefWidth="593.0">
                                                    <children>
-                                                      <TableView fx:id="productTableView" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                                      <TableView fx:id="productsTableView" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
                                                           <TableColumn fx:id="nameTableColumn" prefWidth="75.0" text="Name" />
                                                           <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
