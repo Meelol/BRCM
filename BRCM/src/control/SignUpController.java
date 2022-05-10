@@ -62,13 +62,19 @@ public class SignUpController {
     }
 
     public void signMeUp(ActionEvent event) throws IOException {
-
-        // make sure broncoID only has digits
+        boolean valid = true;
         int broncoID = -1;
-        if (broncoIDTextField.getText().matches("[0-9]+")) {
-            broncoID = Integer.valueOf(broncoIDTextField.getText());
+        String broncoIDText = broncoIDTextField.getText();
+        // make sure broncoID is not empty and only has digits
+        if (broncoIDText == null) {
+            valid = false;
+            System.out.println("Invalid broncoID");
         }
-
+        else if (!broncoIDText.matches("[0-9]+")) {
+            valid = false;
+            System.out.println("Invalid broncoID");
+        }
+        
         String fullName = fullNameTextField.getText();
         String password = passwordTextField.getText();
         String phoneNumber = phoneNumberTextField.getText();
@@ -94,15 +100,11 @@ public class SignUpController {
         } else {
             System.out.println("ur an idiot lol");
         }
-
-        Customer customer = new Customer(broncoID, password, fullName, phoneNumber, street, city, state, zipCode, DOB);
-
-        // handle when user does not click student or professor
-        if (statusCheck) {
+        if (valid && statusCheck) {
+            Customer customer = new Customer(broncoID, password, fullName, phoneNumber, street, city, state, zipCode, DOB);
             customer.setStatus(status);
             customer.setDiscountScheme(status);
             SignUpModel.addCustomer(customer);
-
             SwitchToLoginScene(event);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
