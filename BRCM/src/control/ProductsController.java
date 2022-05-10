@@ -41,6 +41,8 @@ public class ProductsController {
     @FXML
     private Button logOutButton;
     @FXML
+    private Button shoppingCarButton;
+    @FXML
     private TableView<Product> productsTableView;
     @FXML
     private TableColumn<Product, String> nameTableColumn;
@@ -181,4 +183,13 @@ public class ProductsController {
         stage.show();
     }
 
+    // Switch to MainMenuView when Shopping Cart Icon is clicked
+    public void switchToShoppingCartscene(ActionEvent event) throws IOException {
+            System.out.println("Shopping Cart!");
+            this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCartView.fxml"));
+            this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+            this.scene = new Scene(this.root);
+            stage.setScene(scene);
+            stage.show();
+        }
 }
