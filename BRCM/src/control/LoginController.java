@@ -15,8 +15,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-import java.sql.*;
-
 //Controller that takes cares of all the user interaction with LoginView.
 public class LoginController {
 
@@ -29,10 +27,13 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    public static String broncoID;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
-    //Clicking on signUpButton switches scene to the SignUpView.
+
+    // Clicking on signUpButton switches scene to the SignUpView.
     public void switchToSignUpScene(ActionEvent event) throws IOException {
         this.root = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
         this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
@@ -40,21 +41,41 @@ public class LoginController {
         stage.setScene(scene);
         stage.show();
     }
-    //Switch to MainMenuView if user successfully logs in.
-    public void switchToMainMenuScene(ActionEvent event)throws IOException{
+
+    // Switch to MainMenuView if user successfully logs in.
+    public void switchToMainMenuScene(ActionEvent event) throws IOException {
         System.out.println("User successfully logs in!");
         this.root = FXMLLoader.load(getClass().getResource("../view/MainMenuView.fxml"));
         this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
+        //MainMenuController.updateWelcomeText();
     }
-    //Click on logInButton checks credentials through LoginModel and acts accordingly.
-    public void clickLogIn(ActionEvent event) throws IOException{
-        if(LoginModel.checkCredentials(broncoIDTextField.getText(), passwordField.getText())){
-            switchToMainMenuScene(event);
+
+    // Click on logInButton checks credentials through LoginModel and acts
+    // accordingly.
+    public void clickLogIn(ActionEvent event) throws IOException {
+
+        // check if username field is empty and alert user about it
+        if (broncoIDTextField.getText() == "") {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.getDialogPane().setContentText("Username field empty!");
+            alert.getDialogPane().setHeaderText("Blank field");
+            alert.showAndWait();
         }
-        else{
+
+        else if (passwordField.getText() == "") {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.getDialogPane().setContentText("Password field empty!");
+            alert.getDialogPane().setHeaderText("Blank field");
+            alert.showAndWait();
+        }
+
+        else if (LoginModel.checkCredentials(broncoIDTextField.getText(), passwordField.getText())) {
+            broncoID = broncoIDTextField.getText();
+            switchToMainMenuScene(event);
+        } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.getDialogPane().setContentText("Username and password don't match.");
             alert.getDialogPane().setHeaderText("Credentials mismatch");

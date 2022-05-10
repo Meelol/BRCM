@@ -32,12 +32,12 @@
                                              <content>
                                                 <AnchorPane prefHeight="628.0" prefWidth="593.0">
                                                    <children>
-                                                      <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <TableView fx:id="productTableView" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
                                                         <columns>
-                                                          <TableColumn prefWidth="75.0" text="Name" />
-                                                          <TableColumn prefWidth="75.0" text="Price" />
-                                                            <TableColumn prefWidth="75.0" text="Quantity" />
-                                                            <TableColumn prefWidth="75.0" text="Add To Cart" />
+                                                          <TableColumn fx:id="nameTableColumn" prefWidth="75.0" text="Name" />
+                                                          <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
+                                                            <TableColumn fx:id="quantityTableColumn" prefWidth="75.0" text="Quantity" />
+                                                            <TableColumn fx:id="addToCartTableColumn" prefWidth="75.0" text="Add To Cart" />
                                                         </columns>
                                                       </TableView>
                                                    </children>
@@ -125,7 +125,7 @@
                         </HBox>
                         <HBox prefHeight="129.0" prefWidth="740.0">
                            <children>
-                              <TextField prefHeight="25.0" prefWidth="299.0" promptText="Search food...">
+                              <TextField fx:id="searchFoodTextField" prefHeight="25.0" prefWidth="299.0" promptText="Search food...">
                                  <HBox.margin>
                                     <Insets left="35.0" top="15.0" />
                                  </HBox.margin>
@@ -135,14 +135,14 @@
                                     <Insets top="15.0" />
                                  </HBox.margin>
                                  <graphic>
-                                    <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="searchFoodButton" fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../res/lupa.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <TextField prefHeight="25.0" prefWidth="303.0" promptText="Search product...">
+                              <TextField fx:id="searchProductTextField" prefHeight="25.0" prefWidth="303.0" promptText="Search product...">
                                  <HBox.margin>
                                     <Insets left="20.0" top="15.0" />
                                  </HBox.margin>
@@ -152,7 +152,7 @@
                                     <Insets top="15.0" />
                                  </HBox.margin>
                                  <graphic>
-                                    <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="searchProductButton" fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../res/lupa.png" />
                                        </image>

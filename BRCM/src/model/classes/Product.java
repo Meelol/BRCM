@@ -14,4 +14,8 @@ public class Product {
         return this.unitPrice;
     }
 
+    public String getProductName(){
+        return this.name;
+    }
+
 }

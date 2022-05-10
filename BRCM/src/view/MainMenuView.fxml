@@ -33,7 +33,7 @@
                               <Font name="Impact" size="20.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User" wrappingWidth="43.89453125">
+                        <Text fx:id="userText" strokeType="OUTSIDE" strokeWidth="0.0" text="User" wrappingWidth="115.89453125">
                            <font>
                               <Font name="Impact" size="20.0" />
                            </font>
@@ -59,7 +59,7 @@
                                     <Image url="@../res/sport.png" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="goToProductsButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="221.0" text="Products" />
+                              <Button fx:id="goToProductsButton" mnemonicParsing="false" onAction="#switchToProductsScene" prefHeight="55.0" prefWidth="221.0" text="Products" />
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="491.0" prefWidth="370.0" spacing="20.0">
@@ -69,7 +69,7 @@
                                     <Image url="@../res/weightlifter.png" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="goToActivitiesButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="221.0" text="Activities" />
+                              <Button fx:id="goToActivitiesButton" mnemonicParsing="false" onAction="#switchToActivitiesScene" prefHeight="55.0" prefWidth="221.0" text="Activities" />
                            </children>
                         </VBox>
                      </children>
