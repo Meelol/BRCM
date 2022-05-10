@@ -53,9 +53,28 @@
                         <VBox alignment="TOP_CENTER" prefHeight="491.0" prefWidth="370.0" spacing="20.0">
                            <children>
                               <TitledPane animated="false" prefHeight="308.0" prefWidth="370.0" text="Clothes">
-                                <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="368.0" />
-                                </content>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="430.0" prefWidth="367.0">
+                                       <children>
+                                          <ScrollPane hbarPolicy="ALWAYS" layoutX="7.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="282.0" prefWidth="367.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <AnchorPane prefHeight="628.0" prefWidth="593.0">
+                                                   <children>
+                                                      <TableView fx:id="productsTableView1" layoutX="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="628.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="nameTableColumn1" prefWidth="75.0" text="Name" />
+                                                            <TableColumn fx:id="priceTableColumn1" prefWidth="75.0" text="Price" />
+                                                            <TableColumn fx:id="quantityTableColumn1" prefWidth="75.0" text="Quantity" />
+                                                            <TableColumn fx:id="addToCartTableColumn1" prefWidth="75.0" text="Add To Cart" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
                               </TitledPane>
                            </children>
                         </VBox>
@@ -142,7 +161,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <TextField fx:id="searchProductTextField" prefHeight="25.0" prefWidth="303.0" promptText="Search product...">
+                              <TextField fx:id="searchClothesTextField" prefHeight="25.0" prefWidth="303.0" promptText="Search product...">
                                  <HBox.margin>
                                     <Insets left="20.0" top="15.0" />
                                  </HBox.margin>

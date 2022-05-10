@@ -1,18 +1,35 @@
 package model;
+
 import java.sql.*;
 import model.classes.Product;
+
 public class ProductsModel {
 
     static Connection conn = null;
-    public static ResultSet getListOfProducts(){
+
+    public static ResultSet getListOfFood() {
         conn = DBConnect.startConnection();
-        String query = "SELECT * FROM public.\"PRODUCTS\";";
-        try{
+        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" < 2000 ;";
+        try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);
             return set;
 
-        } catch(Exception e) {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ResultSet getListOfClothes() {
+        conn = DBConnect.startConnection();
+        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" >= 2000 ;";
+        try {
+            Statement stmnt = conn.createStatement();
+            ResultSet set = stmnt.executeQuery(query);
+            return set;
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
