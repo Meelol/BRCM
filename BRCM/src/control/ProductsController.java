@@ -32,7 +32,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
 
-
 public class ProductsController {
 
     private Stage stage;
@@ -78,8 +77,6 @@ public class ProductsController {
         UpdateClothesTable();
     }
 
-
-
     public void UpdateFoodsTable() throws SQLException {
         ResultSet products = ProductsModel.getListOfFood();
         while (products.next()) {
@@ -93,31 +90,34 @@ public class ProductsController {
         }
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        priceTableColumn.setStyle("-fx-alignment: CENTER;");
         addToCartTableColumn.setCellValueFactory(new PropertyValueFactory<>("button"));
+        addToCartTableColumn.setStyle("-fx-alignment: CENTER;");
         quantityTableColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        quantityTableColumn.setStyle("-fx-alignment: CENTER;");
         productsTableView.setItems(productsObservableList);
         productsTableView.setEditable(true);
         quantityTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
         FilteredList<Product> filteredObservableList = new FilteredList<>(productsObservableList, b -> true);
-        searchFoodTextField.textProperty().addListener((observable,oldValue,newValue)->{
-        filteredObservableList.setPredicate(Product -> {
-            if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
-                return true;
-            }
+        searchFoodTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredObservableList.setPredicate(Product -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
 
-            String searchKeyword = newValue.toLowerCase();
+                String searchKeyword = newValue.toLowerCase();
 
-            if (Product.getName().toLowerCase().indexOf(searchKeyword) > -1) {
-                return true;
-            } else
-                return false;
+                if (Product.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else
+                    return false;
 
             });
         });
 
-        SortedList<Product> sortedData = new SortedList <>(filteredObservableList);
-        
+        SortedList<Product> sortedData = new SortedList<>(filteredObservableList);
+
         sortedData.comparatorProperty().bind(productsTableView.comparatorProperty());
         productsTableView.setItems(sortedData);
     }
@@ -135,31 +135,34 @@ public class ProductsController {
         }
         nameTableColumn1.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceTableColumn1.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        priceTableColumn1.setStyle("-fx-alignment: CENTER;");
         addToCartTableColumn1.setCellValueFactory(new PropertyValueFactory<>("button"));
+        addToCartTableColumn1.setStyle("-fx-alignment: CENTER;");
         quantityTableColumn1.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        quantityTableColumn1.setStyle("-fx-alignment: CENTER;");
         productsTableView1.setItems(productsObservableList1);
         productsTableView1.setEditable(true);
         quantityTableColumn1.setCellFactory(TextFieldTableCell.forTableColumn());
 
         FilteredList<Product> filteredObservableList = new FilteredList<>(productsObservableList1, b -> true);
-        searchClothesTextField.textProperty().addListener((observable,oldValue,newValue)->{
-        filteredObservableList.setPredicate(Product -> {
-            if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
-                return true;
-            }
+        searchClothesTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredObservableList.setPredicate(Product -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
 
-            String searchKeyword = newValue.toLowerCase();
+                String searchKeyword = newValue.toLowerCase();
 
-            if (Product.getName().toLowerCase().indexOf(searchKeyword) > -1) {
-                return true;
-            } else
-                return false;
+                if (Product.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else
+                    return false;
 
             });
         });
 
-        SortedList<Product> sortedData = new SortedList <>(filteredObservableList);
-        
+        SortedList<Product> sortedData = new SortedList<>(filteredObservableList);
+
         sortedData.comparatorProperty().bind(productsTableView1.comparatorProperty());
         productsTableView1.setItems(sortedData);
     }
