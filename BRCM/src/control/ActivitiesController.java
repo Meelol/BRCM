@@ -76,7 +76,7 @@ public class ActivitiesController {
             activityObservableList.add(new Activity(activityID, productName, productPrice));
         }
         activityTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("pgitrice"));
         priceTableColumn.setStyle("-fx-alignment: CENTER;");
 
         activitiesTableView.setItems(activityObservableList);
