@@ -129,4 +129,14 @@ public class ActivitiesController {
         stage.setScene(scene);
         stage.show();
     }
+
+    // Switch to MainMenuView when Shopping Cart Icon is clicked
+    public void switchToShoppingCartScene(ActionEvent event) throws IOException {
+        System.out.println("Shopping Cart!");
+        this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCartView.fxml"));
+        this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        this.scene = new Scene(this.root);
+        stage.setScene(scene);
+        stage.show();
+        }
 }
