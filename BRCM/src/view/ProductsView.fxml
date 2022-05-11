@@ -126,7 +126,7 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <Button fx:id="shoppingCartButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #105E26;">
+                              <Button fx:id="shoppingCartButton" mnemonicParsing="false" onAction="#switchToShoppingCartscene" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #105E26;">
                                  <graphic>
                                     <ImageView fitHeight="19.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

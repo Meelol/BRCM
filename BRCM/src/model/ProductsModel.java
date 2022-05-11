@@ -23,7 +23,7 @@ public class ProductsModel {
 
     public static ResultSet getListOfClothes() {
         conn = DBConnect.startConnection();
-        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" >= 2000 ;";
+        String query = "SELECT * FROM public.\"PRODUCTS\" AS P WHERE P.\"productID\" >= 2000 AND P.\"productID\" < 3000;";
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);

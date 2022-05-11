@@ -2,9 +2,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.sql.*;
+
+import javax.swing.ImageIcon;
 
 public class Main extends Application {
 
@@ -18,6 +21,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/LoginView.fxml"));
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setTitle("Bronco Recreational Complex Management");
+        Image mainIcon = new Image("res/cpp.png");
+        primaryStage.getIcons().add(mainIcon);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
