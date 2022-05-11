@@ -64,29 +64,33 @@ public class LoginController {
 
     // Click on logInButton checks credentials through LoginModel and acts
     // accordingly.
-    public void clickLogIn(ActionEvent event) throws IOException {
+    public boolean clickLogIn(ActionEvent event) throws IOException {
 
         // check if username field is empty and alert user about it
-        if (broncoIDTextField.getText() == "") {
+        if (broncoIDTextField.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.getDialogPane().setContentText("Username field is blank!");
             alert.getDialogPane().setHeaderText("Blank field");
             alert.showAndWait();
+            return false;
         }
 
-        else if (passwordField.getText() == "") {
+        else if (passwordField.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.getDialogPane().setContentText("Password field is blank!");
             alert.getDialogPane().setHeaderText("Blank field");
             alert.showAndWait();
+            return false;
         }
 
         else if (LoginModel.checkCredentials(broncoIDTextField.getText(), passwordField.getText())) {
             if(LoginModel.isStaff(broncoIDTextField.getText(), passwordField.getText())) {
                 switchToManagementScene(event);
+                return true;
             } else {
                 broncoID = broncoIDTextField.getText();
                 switchToMainMenuScene(event);
+                return true;
             }
 
         } else {
@@ -94,6 +98,7 @@ public class LoginController {
             alert.getDialogPane().setContentText("Username and password don't match.");
             alert.getDialogPane().setHeaderText("Credentials mismatch");
             alert.showAndWait();
+            return false;
         }
     }
 
