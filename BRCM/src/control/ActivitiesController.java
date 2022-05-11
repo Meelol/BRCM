@@ -2,7 +2,6 @@ package control;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,16 +17,12 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import model.ActivitiesModel;
-import model.ProductsModel;
 import model.classes.Activity;
 import model.classes.Cart;
-import model.classes.Product;
 
 import javafx.scene.control.TextField;
 
@@ -71,9 +66,7 @@ public class ActivitiesController {
         while(activities.next()){
             Integer activityID = activities.getInt("productID");
             String productName = activities.getString("name");
-            System.out.println(productName);
             Float productPrice = activities.getFloat("currentPrice");
-            System.out.println(productPrice);
             String date = "";
             if(activityDate.next()){
                 date = activityDate.getString("date");

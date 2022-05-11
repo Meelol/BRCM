@@ -49,4 +49,9 @@ public class Cart {
     public static void removeActivityFromCart(Activity activity) {
         cart.scheduleActivity.remove(activity);
     }
+
+    public static void orderFulfilled(){
+        cart.productQuantity.clear();
+        cart.scheduleActivity.clear();
+    }
 }

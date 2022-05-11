@@ -14,8 +14,8 @@
                <center>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="goToProductsButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="221.0" text="Activity Prices" />
-                        <Button fx:id="goToActivitiesButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="221.0" text="Earnings Report" />
+                        <Button fx:id="activitiesPriceButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="221.0" text="Activity Prices" />
+                        <Button fx:id="reportButton" mnemonicParsing="false" onAction="#printEarningsReport" prefHeight="55.0" prefWidth="221.0" text="Earnings Report" />
                      </children>
                   </HBox>
                </center>

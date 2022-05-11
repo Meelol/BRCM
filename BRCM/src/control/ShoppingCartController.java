@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import model.ShoppingCartModel;
 import model.classes.Activity;
 import model.classes.Cart;
+import model.classes.Order;
 import model.classes.Product;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -20,7 +21,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -53,6 +53,8 @@ public class ShoppingCartController {
     private Text discountText;
     @FXML
     private Text totalText;
+    @FXML
+    private Button buyNowButton;
 
     ObservableList<ShoppingCartModel> cartObservableList = FXCollections.observableArrayList();
 
@@ -100,7 +102,6 @@ public class ShoppingCartController {
             float price = activity.getPrice();
             float subtotal = (float) quantity * price;
             gross_subtotal += subtotal;
-            System.out.println("Subtotal: " + subtotal);
             Button button = new Button("");
             Image image = new Image("res/eliminar.png");
             ImageView view = new ImageView(image);
@@ -134,7 +135,7 @@ public class ShoppingCartController {
         discountText.setText(discountString);
         String subtotalString = String.valueOf(gross_subtotal) + "$";
         subtotalText.setText(subtotalString);
-        total = discount * gross_subtotal;
+        total = gross_subtotal - (discount * gross_subtotal);
         String totalString = String.valueOf(total) + "$";
         totalText.setText(totalString);
     }
@@ -150,7 +151,7 @@ public class ShoppingCartController {
     }
 
     public void refreshTable(ActionEvent event) throws IOException {
-        System.out.println("Logging Out!");
+        System.out.println("Refreshing Cart Scene!");
         this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCartView.fxml"));
         this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         this.scene = new Scene(this.root);
@@ -166,5 +167,12 @@ public class ShoppingCartController {
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void printReceipt(){
+        Order order = new Order(Integer.valueOf(LoginController.broncoID), Cart.cart.getProductQuantity(), Cart.cart.getActivityQuantity(), discount);
+        order.printReceipt();
+        ShoppingCartModel.insertOrderToDB(order);
+        Cart.orderFulfilled();
     }
 }

@@ -108,7 +108,7 @@
                               <Text fx:id="totalText" strokeType="OUTSIDE" strokeWidth="0.0" text="0$" wrappingWidth="53.0" />
                            </children>
                         </HBox>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Buy Now" />
+                        <Button fx:id="buyNowButton" mnemonicParsing="false" onAction="#printReceipt" prefHeight="25.0" prefWidth="171.0" text="Buy Now" />
                      </children>
                   </VBox>
                </bottom>

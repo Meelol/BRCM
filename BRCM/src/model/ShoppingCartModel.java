@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javafx.scene.control.Button;
-import model.classes.Cart;
+import model.classes.Order;
 
 public class ShoppingCartModel {
 
@@ -59,6 +59,21 @@ public class ShoppingCartModel {
             return discountScheme;
         } catch (Exception e) {
             return 0;
+        }
+    }
+
+    public static void insertOrderToDB(Order order){
+        conn = DBConnect.startConnection();
+
+        try {
+            String insertCustomersql = "INSERT INTO public.\"ORDER\"(\"orderID\", \"broncoID\", date, time, \"totalPrice\") VALUES ("
+                + order.getOrderID() + ", " + order.getBroncoID() + ", \'" + order.getDate() + "\', \'"
+                + order.getTime() + "\', " + order.getTotalPrice() +");";
+            System.out.println(insertCustomersql);
+            Statement stmnt = conn.createStatement();
+            stmnt.executeUpdate(insertCustomersql);
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

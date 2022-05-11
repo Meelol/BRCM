@@ -83,11 +83,8 @@ public class ProductsController {
         ResultSet products = ProductsModel.getListOfFood();
         while (products.next()) {
             Integer productID = products.getInt("productID");
-            System.out.println(productID);
             String productName = products.getString("name");
-            System.out.println(productName);
             Float productPrice = products.getFloat("currentPrice");
-            System.out.println(productPrice);
             Button button = new Button("");
             Image image = new Image("res/add-to-cart.png");
             ImageView view = new ImageView(image);
@@ -121,7 +118,6 @@ public class ProductsController {
 
             @Override
             public void handle(CellEditEvent<Product, String> event) {
-                System.out.println("Value edited for Food!!");
                 Product product = event.getRowValue();
                 product.setQuantity(event.getNewValue());
             }
@@ -156,11 +152,8 @@ public class ProductsController {
         ResultSet products = ProductsModel.getListOfClothes();
         while (products.next()) {
             Integer productID = products.getInt("productID");
-            System.out.println(productID);
             String productName = products.getString("name");
-            System.out.println(productName);
             Float productPrice = products.getFloat("currentPrice");
-            System.out.println(productPrice);
             Button button = new Button("");
             Image image = new Image("res/add-to-cart.png");
             ImageView view = new ImageView(image);
@@ -193,7 +186,6 @@ public class ProductsController {
 
             @Override
             public void handle(CellEditEvent<Product, String> event) {
-                System.out.println("Value edited!!");
                 Product product = event.getRowValue();
                 product.setQuantity(event.getNewValue());
             }

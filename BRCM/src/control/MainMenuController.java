@@ -31,6 +31,7 @@ public class MainMenuController {
     private Scene scene;
     private Parent root;
     static Cart cart;
+
     @FXML
     public void initialize() {
         String name = MainMenuModel.getName();
@@ -65,7 +66,7 @@ public class MainMenuController {
     }
 
     public void switchToShoppingCartScene(ActionEvent event) throws IOException {
-        this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCart.fxml"));
+        this.root = FXMLLoader.load(getClass().getResource("../view/ShoppingCartView.fxml"));
         this.stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         this.scene = new Scene(this.root);
         stage.setScene(scene);

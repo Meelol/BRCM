@@ -19,7 +19,7 @@
                <top>
                   <HBox alignment="TOP_RIGHT" prefHeight="29.0" prefWidth="740.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="shoppingCartButton" mnemonicParsing="false" style="-fx-background-color: #105E26;">
+                        <Button fx:id="shoppingCartButton" mnemonicParsing="false" onAction="#switchToShoppingCartScene" style="-fx-background-color: #105E26;">
                            <graphic>
                               <ImageView fitHeight="19.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
