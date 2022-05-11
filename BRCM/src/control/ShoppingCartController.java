@@ -23,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class ShoppingCartController {
 
@@ -46,6 +47,12 @@ public class ShoppingCartController {
     private Button goBackButton;
     @FXML
     private Button logOutButton;
+    @FXML
+    private Text subtotalText;
+    @FXML
+    private Text discountText;
+    @FXML
+    private Text totalText;
 
     ObservableList<ShoppingCartModel> cartObservableList = FXCollections.observableArrayList();
 
@@ -55,13 +62,17 @@ public class ShoppingCartController {
         updateCartTable();
     }
 
+    private float gross_subtotal = 0;
+    private float discount;
+    private float total;
+
     public void updateCartTable() {
         for (Product product : Cart.cart.getProductQuantity().keySet()) {
             String productName = product.getName();
             int quantity = Integer.valueOf(product.getQuantity());
             float price = product.getUnitPrice();
             float subtotal = (float) quantity * price;
-            System.out.println("Subtotal: " + subtotal);
+            gross_subtotal += subtotal;
             Button button = new Button("");
             Image image = new Image("res/eliminar.png");
             ImageView view = new ImageView(image);
@@ -88,6 +99,7 @@ public class ShoppingCartController {
             int quantity = Cart.cart.getActivityQuantity().get(activity);
             float price = activity.getPrice();
             float subtotal = (float) quantity * price;
+            gross_subtotal += subtotal;
             System.out.println("Subtotal: " + subtotal);
             Button button = new Button("");
             Image image = new Image("res/eliminar.png");
@@ -117,6 +129,14 @@ public class ShoppingCartController {
         quantityTableColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         subtotalTableColumn.setCellValueFactory(new PropertyValueFactory<>("subtotal"));
         shoppingCartTableView.setItems(cartObservableList);
+        discount = ShoppingCartModel.getDiscountScheme(LoginController.broncoID);
+        String discountString = String.valueOf(discount) + "%";
+        discountText.setText(discountString);
+        String subtotalString = String.valueOf(gross_subtotal) + "$";
+        subtotalText.setText(subtotalString);
+        total = discount * gross_subtotal;
+        String totalString = String.valueOf(total) + "$";
+        totalText.setText(totalString);
     }
 
     // Switch to login screen when log out is clicked
