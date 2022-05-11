@@ -2,7 +2,7 @@ package control;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.Date;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import model.ActivitiesModel;
 import model.ProductsModel;
 import model.classes.Activity;
 import model.classes.Product;
@@ -55,9 +56,31 @@ public class ActivitiesController {
     @FXML
     private TableColumn<Activity, Button> historicalPricesColumn;
 
+    ObservableList<Activity> activityObservableList = FXCollections.observableArrayList();
 
+    @FXML
+    public void initialize() throws SQLException {
+        updateActvityTable();
+    }
 
-    
+    public void updateActvityTable() throws SQLException {
+        ResultSet activities = ActivitiesModel.getListOfActivities();
+
+        while(activities.next()){
+            Integer activityID = activities.getInt("productID");
+            String productName = activities.getString("name");
+            System.out.println(productName);
+            Float productPrice = activities.getFloat("currentPrice");
+            System.out.println(productPrice);
+
+            activityObservableList.add(new Activity(activityID, productName, productPrice));
+        }
+        activityTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceTableColumn.setStyle("-fx-alignment: CENTER;");
+
+        activitiesTableView.setItems(activityObservableList);
+    }
 
     // Switch to login screen when log out is clicked
     public void switchToLoginScene(ActionEvent event) throws IOException {
