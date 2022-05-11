@@ -1,28 +1,25 @@
 package model.classes;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import control.MainMenuController;
 
 public class Product {
     private int productID;
     private String name;
     private float unitPrice;
 
-    private Button button;
+    private Button button = new Button();
     private String quantity;
-    private Image image = new Image("res/add-to-cart.png");
-    private ImageView view = new ImageView(image);
 
-    public Product(int productID, String name, float unitPrice) {
+    public Product(int productID, String name, float unitPrice, Button button) {
         this.productID = productID;
         this.name = name;
         this.unitPrice = unitPrice;
-        this.button = new Button("");
-        view.setFitHeight(20);
-        view.setPreserveRatio(true);
-        button.setGraphic(view);
-        button.setPrefSize(50, 20);
+        this.button = button;
         this.quantity = "0";
     }
 
@@ -40,5 +37,8 @@ public class Product {
 
     public String getQuantity() {
         return this.quantity;
+    }
+    public void setQuantity(String q){
+        this.quantity = q;
     }
 }

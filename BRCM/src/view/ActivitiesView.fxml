@@ -83,7 +83,7 @@
                                                 <TableView fx:id="activitiesTableView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="568.0" prefWidth="1025.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                   <columns>
                                                     <TableColumn fx:id="activityTableColumn" prefWidth="107.0" text="Activity" />
-                                                    <TableColumn fx:id="datesDateColumn" prefWidth="390.9999694824219" text="Dates" />
+                                                    <TableColumn fx:id="datesTableColumn" prefWidth="390.9999694824219" text="Dates" />
                                                       <TableColumn fx:id="priceTableColumn" minWidth="0.0" prefWidth="84.0" text="Price" />
                                                       <TableColumn fx:id="historicalPricesColumn" prefWidth="122.0" text="Historical Prices" />
                                                   </columns>

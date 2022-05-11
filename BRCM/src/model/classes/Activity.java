@@ -1,5 +1,8 @@
 package model.classes;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 
@@ -10,37 +13,45 @@ public class Activity {
     private String date;
 
     private Button button;
-    private DatePicker datePicker;
 
-    public Activity(int productID, String name, float price) {
+    public Activity(int productID, String name, float price, String date) {
         this.productID = productID;
         this.name = name;
         this.price = price;
-        this.date = "2022-02-22";
+        this.date = date;
+        this.button = new Button();
+        setButtonText(date);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getID(){
+    public int getID() {
         return this.productID;
     }
 
-    public void setID(int ID){
+    public void setID(int ID) {
         this.productID = ID;
     }
 
-    public float getPrice(){
+    public float getPrice() {
         return price;
     }
 
-    public String getDate(){
+    public String getDate() {
         return date;
+    }
+
+    public void setButtonText(String text){
+        this.button.setText(text);
+    }
+    public Button getButton(){
+        return this.button;
     }
 
 }

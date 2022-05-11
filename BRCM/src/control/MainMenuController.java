@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import model.MainMenuModel;
+import model.classes.Cart;
 
 public class MainMenuController {
 
@@ -29,7 +30,7 @@ public class MainMenuController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
+    static Cart cart;
     @FXML
     public void initialize() {
         String name = MainMenuModel.getName();

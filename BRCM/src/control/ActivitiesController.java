@@ -50,7 +50,7 @@ public class ActivitiesController {
     @FXML
     private TableColumn<Activity, String> activityTableColumn;
     @FXML
-    private TableColumn<Activity, DatePicker> datesDateColumn;
+    private TableColumn<Activity, Button> datesTableColumn;
     @FXML
     private TableColumn<Activity, Float> priceTableColumn;
     @FXML
@@ -60,26 +60,54 @@ public class ActivitiesController {
 
     @FXML
     public void initialize() throws SQLException {
-        updateActvityTable();
+        updateActivityTable();
     }
 
-    public void updateActvityTable() throws SQLException {
+    public void updateActivityTable() throws SQLException {
         ResultSet activities = ActivitiesModel.getListOfActivities();
-
+        ResultSet activityDate = ActivitiesModel.getListOfActivityDates();
         while(activities.next()){
             Integer activityID = activities.getInt("productID");
             String productName = activities.getString("name");
             System.out.println(productName);
             Float productPrice = activities.getFloat("currentPrice");
             System.out.println(productPrice);
-
-            activityObservableList.add(new Activity(activityID, productName, productPrice));
+            String date = "";
+            if(activityDate.next()){
+                date = activityDate.getString("date");
+            }
+            activityObservableList.add(new Activity(activityID, productName, productPrice, date));
         }
         activityTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         priceTableColumn.setStyle("-fx-alignment: CENTER;");
+        datesTableColumn.setCellValueFactory(new PropertyValueFactory<>(("button")));
+        datesTableColumn.setStyle("-fx-alignment: CENTER;");
 
         activitiesTableView.setItems(activityObservableList);
+
+        // Search Activity Implementation
+        FilteredList<Activity> filteredObservableList = new FilteredList<>(activityObservableList, b -> true);
+        searchActivityTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredObservableList.setPredicate(Activity -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
+
+                String searchKeyword = newValue.toLowerCase();
+
+                if (Activity.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else
+                    return false;
+
+            });
+        });
+
+        SortedList<Activity> sortedData = new SortedList<>(filteredObservableList);
+
+        sortedData.comparatorProperty().bind(activitiesTableView.comparatorProperty());
+        activitiesTableView.setItems(sortedData);
     }
 
     // Switch to login screen when log out is clicked
