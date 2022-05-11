@@ -21,7 +21,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/LoginView.fxml"));
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setTitle("Bronco Recreational Complex Management");
-        Image mainIcon = new Image("res/cpp.jpg");
+        Image mainIcon = new Image("res/cpp.png");
         primaryStage.getIcons().add(mainIcon);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -276,7 +276,7 @@ public class SignUpController {
         } else {
             System.out.println("ur an idiot lol");
         }
-
+        // BREAKS FOR NOW
         if (valid && statusCheck) {
             Customer customer = new Customer(broncoID, password, fullName, phoneNumber, street, city, state, zipCode, DOB);
             customer.setStatus(status);

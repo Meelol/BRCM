@@ -14,7 +14,10 @@ public class LoginModel {
             Statement stmnt = conn.createStatement();
             String sql = "SELECT * FROM public.\"CUSTOMERS\" WHERE \"broncoID\"="+username+" AND \"password\"="+"\'"+password+"\'";
             ResultSet rs = stmnt.executeQuery(sql);
-            return rs.next();
+            if(rs.next()){
+                return true;
+            }
+            else return false;
             
         }catch(Exception e){
             return false;
@@ -28,7 +31,10 @@ public class LoginModel {
             String sql = "SELECT * FROM public.\"CUSTOMERS\" WHERE \"broncoID\"="+username+" AND \"password\"="+"\'"+password+"\' AND \"status\"="+3;
             System.out.println(sql);
             ResultSet rs = stmnt.executeQuery(sql);
-            return rs.next();
+            if(rs.next()){
+                return true;
+            }
+            else return false;
             
         }catch(Exception e){
             return false;
