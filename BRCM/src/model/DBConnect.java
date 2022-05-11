@@ -13,7 +13,7 @@ public class DBConnect {
         try {
             // DB Connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, "1234");
             System.out.println("Connection Successful!");
             return conn;
         } catch (Exception e) {
