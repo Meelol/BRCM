@@ -69,14 +69,14 @@ public class LoginController {
         // check if username field is empty and alert user about it
         if (broncoIDTextField.getText() == "") {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.getDialogPane().setContentText("Username field empty!");
+            alert.getDialogPane().setContentText("Username field is blank!");
             alert.getDialogPane().setHeaderText("Blank field");
             alert.showAndWait();
         }
 
         else if (passwordField.getText() == "") {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.getDialogPane().setContentText("Password field empty!");
+            alert.getDialogPane().setContentText("Password field is blank!");
             alert.getDialogPane().setHeaderText("Blank field");
             alert.showAndWait();
         }
