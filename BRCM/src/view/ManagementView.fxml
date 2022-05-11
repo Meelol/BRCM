@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffb717;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffb717;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.ManagementController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #105E26;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
          <children>
@@ -20,7 +20,7 @@
                   </HBox>
                </center>
                <top>
-                  <Button fx:id="logOutButton" mnemonicParsing="false" text="Log Out" BorderPane.alignment="TOP_RIGHT">
+                  <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#switchToLoginScene" text="Log Out" BorderPane.alignment="TOP_RIGHT">
                      <BorderPane.margin>
                         <Insets right="5.0" top="10.0" />
                      </BorderPane.margin>
