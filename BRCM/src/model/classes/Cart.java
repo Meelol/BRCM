@@ -5,29 +5,48 @@ import java.util.HashMap;
 public class Cart {
     private HashMap<Product, Integer> productQuantity;
     private HashMap<Activity, Integer> scheduleActivity;
-    static Cart cart = new Cart();
-    Cart(){
+    public static Cart cart = new Cart();
+
+    Cart() {
         this.productQuantity = new HashMap<Product, Integer>();
         this.scheduleActivity = new HashMap<Activity, Integer>();
     }
+
     public static void addProductToCart(Product product, int quantity) {
         Cart.cart.productQuantity.put(product, quantity);
     }
-    public static void addActivityToCart(Activity activity){
+
+    public static void addActivityToCart(Activity activity) {
         Cart.cart.scheduleActivity.put(activity, 1);
     }
-    
-    public static void printCart(){
+
+    public HashMap<Product, Integer> getProductQuantity() {
+        return this.productQuantity;
+    }
+
+    public HashMap<Activity, Integer> getActivityQuantity() {
+        return this.scheduleActivity;
+    }
+
+    public static void printCart() {
         System.out.println("New Shopping Cart:");
-        for (Product name: cart.productQuantity.keySet()) {
+        for (Product name : cart.productQuantity.keySet()) {
             String key = name.getName();
             String value = cart.productQuantity.get(name).toString();
             System.out.println(key + " " + value);
         }
-        for (Activity name: cart.scheduleActivity.keySet()) {
+        for (Activity name : cart.scheduleActivity.keySet()) {
             String key = name.getName();
             String value = cart.scheduleActivity.get(name).toString();
             System.out.println(key + " " + value);
         }
+    }
+
+    public static void removeProductFromCart(Product product) {
+        cart.productQuantity.remove(product);
+    }
+
+    public static void removeActivityFromCart(Activity activity) {
+        cart.scheduleActivity.remove(activity);
     }
 }

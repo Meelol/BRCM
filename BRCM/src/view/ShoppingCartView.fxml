@@ -64,13 +64,13 @@
                                        <content>
                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="568.0" prefWidth="705.0">
                                              <children>
-                                                <TableView fx:id="activitiesTableView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="568.0" prefWidth="1025.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="shoppingCartTableView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="568.0" prefWidth="1025.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <columns>
-                                                      <TableColumn prefWidth="48.0" />
-                                                      <TableColumn prefWidth="232.99996948242188" text="Product" />
-                                                      <TableColumn prefWidth="106.0" text="Price" />
-                                                      <TableColumn minWidth="0.0" prefWidth="90.0" text="Quantity" />
-                                                      <TableColumn prefWidth="226.00003051757812" text="Subtotal" />
+                                                      <TableColumn fx:id="removeFromCartTableColumn" prefWidth="48.0" />
+                                                      <TableColumn fx:id="productTableColumn" prefWidth="232.99996948242188" text="Product" />
+                                                      <TableColumn fx:id="priceTableColumn" prefWidth="106.0" text="Price" />
+                                                      <TableColumn fx:id="quantityTableColumn" minWidth="0.0" prefWidth="90.0" text="Quantity" />
+                                                      <TableColumn fx:id="subtotalTableColumn" prefWidth="226.00003051757812" text="Subtotal" />
                                                    </columns>
                                                 </TableView>
                                              </children>
@@ -89,7 +89,7 @@
                      <children>
                         <HBox alignment="BOTTOM_RIGHT" prefHeight="188.0" prefWidth="740.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal" wrappingWidth="210.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gross Total" wrappingWidth="210.0" />
                               <Text fx:id="subtotalText" strokeType="OUTSIDE" strokeWidth="0.0" text="0$" wrappingWidth="53.0" />
                            </children>
                         </HBox>
@@ -101,7 +101,7 @@
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" wrappingWidth="210.0">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Net Total" wrappingWidth="210.0">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font></Text>

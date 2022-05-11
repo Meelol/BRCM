@@ -14,8 +14,8 @@ public class Order {
 
     private static int orderNumber = 0;
 
-    public Order(int orderID, int broncoID) {
-        this.orderID = orderID;
+    public Order(int broncoID) {
+        this.orderID = increaseOrderNum();
         this.broncoID = broncoID;
         this.date = LocalDate.now();
         this.time = LocalTime.now();
