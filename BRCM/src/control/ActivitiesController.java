@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -25,6 +26,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import model.ActivitiesModel;
 import model.ProductsModel;
 import model.classes.Activity;
+import model.classes.Cart;
 import model.classes.Product;
 
 import javafx.scene.control.TextField;
@@ -76,7 +78,16 @@ public class ActivitiesController {
             if(activityDate.next()){
                 date = activityDate.getString("date");
             }
-            activityObservableList.add(new Activity(activityID, productName, productPrice, date));
+            Button button = new Button("");
+            Activity activity = new Activity(activityID, productName, productPrice, date, button);
+            button.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    Cart.addActivityToCart(activity);
+                    Cart.printCart();
+                }
+            });
+            activityObservableList.add(activity);
         }
         activityTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));

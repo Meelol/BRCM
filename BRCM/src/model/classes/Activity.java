@@ -14,12 +14,12 @@ public class Activity {
 
     private Button button;
 
-    public Activity(int productID, String name, float price, String date) {
+    public Activity(int productID, String name, float price, String date, Button button) {
         this.productID = productID;
         this.name = name;
         this.price = price;
         this.date = date;
-        this.button = new Button();
+        this.button = button;
         setButtonText(date);
     }
 

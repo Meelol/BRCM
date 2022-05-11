@@ -100,7 +100,7 @@ public class ProductsController {
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    Cart.addToCart(product, Integer.valueOf(product.getQuantity()));
+                    Cart.addProductToCart(product, Integer.valueOf(product.getQuantity()));
                     Cart.printCart();
                 }
             });
@@ -151,6 +151,7 @@ public class ProductsController {
         productsTableView.setItems(sortedData);
     }
 
+    // This method will update/populate the clothes products into clothesTableView
     public void UpdateClothesTable() throws SQLException {
         ResultSet products = ProductsModel.getListOfClothes();
         while (products.next()) {
@@ -168,10 +169,11 @@ public class ProductsController {
             button.setGraphic(view);
             button.setPrefSize(50, 20);
             Product product = new Product(productID, productName, productPrice, button);
+            //Add to Cart Button Implementation
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    Cart.addToCart(product, Integer.valueOf(product.getQuantity()));
+                    Cart.addProductToCart(product, Integer.valueOf(product.getQuantity()));
                     Cart.printCart();
                 }
             });
@@ -248,9 +250,5 @@ public class ProductsController {
         this.scene = new Scene(this.root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void updateProductQuantity() {
-
     }
 }

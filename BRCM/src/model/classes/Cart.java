@@ -4,12 +4,17 @@ import java.util.HashMap;
 
 public class Cart {
     private HashMap<Product, Integer> productQuantity;
+    private HashMap<Activity, Integer> scheduleActivity;
     static Cart cart = new Cart();
     Cart(){
         this.productQuantity = new HashMap<Product, Integer>();
+        this.scheduleActivity = new HashMap<Activity, Integer>();
     }
-    public static void addToCart(Product product, int quantity) {
+    public static void addProductToCart(Product product, int quantity) {
         Cart.cart.productQuantity.put(product, quantity);
+    }
+    public static void addActivityToCart(Activity activity){
+        Cart.cart.scheduleActivity.put(activity, 1);
     }
     
     public static void printCart(){
@@ -17,6 +22,11 @@ public class Cart {
         for (Product name: cart.productQuantity.keySet()) {
             String key = name.getName();
             String value = cart.productQuantity.get(name).toString();
+            System.out.println(key + " " + value);
+        }
+        for (Activity name: cart.scheduleActivity.keySet()) {
+            String key = name.getName();
+            String value = cart.scheduleActivity.get(name).toString();
             System.out.println(key + " " + value);
         }
     }
