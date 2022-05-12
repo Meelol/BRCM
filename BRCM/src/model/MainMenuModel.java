@@ -11,7 +11,6 @@ public class MainMenuModel {
         conn = DBConnect.startConnection();
         String user = "default";
         try{
-            
             Statement stmnt1 = conn.createStatement();
             String sql1 = "SELECT * FROM public.\"CUSTOMERS\" WHERE \"broncoID\"="+ LoginController.broncoID +"";
             ResultSet rs1 = stmnt1.executeQuery(sql1);

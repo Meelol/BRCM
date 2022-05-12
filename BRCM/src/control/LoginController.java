@@ -52,6 +52,10 @@ public class LoginController {
         stage.show();
     }
 
+    public String getBroncoID() {
+        return broncoID;
+    }
+
     // Switch to MainMenuView if user successfully logs in.
     public void switchToManagementScene(ActionEvent event) throws IOException {
         System.out.println("Staff successfully logs in!");
