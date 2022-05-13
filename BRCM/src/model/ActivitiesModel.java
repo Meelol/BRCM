@@ -14,8 +14,8 @@ public class ActivitiesModel {
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);
+            conn.close();
             return set;
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -28,8 +28,8 @@ public class ActivitiesModel {
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);
+            conn.close();
             return set;
-
         } catch (Exception e) {
             e.printStackTrace();
         }

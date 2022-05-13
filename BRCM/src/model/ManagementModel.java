@@ -11,6 +11,7 @@ public class ManagementModel {
             Statement stmnt = conn.createStatement();
             String sql = "SELECT \"totalPrice\" FROM public.\"ORDER\";";
             ResultSet rs = stmnt.executeQuery(sql);
+            conn.close();
             return rs;
 
         } catch (Exception e) {

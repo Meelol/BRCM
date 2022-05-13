@@ -13,7 +13,14 @@ public class Cart {
     }
 
     public static void addProductToCart(Product product, int quantity) {
-        Cart.cart.productQuantity.put(product, quantity);
+        if(quantity > 0){
+            if(Cart.cart.productQuantity.containsKey(product)){
+                Cart.cart.productQuantity.replace(product, Cart.cart.productQuantity.get(product), quantity);
+            }
+            else{
+                Cart.cart.productQuantity.put(product, quantity);
+            }
+        }
     }
 
     public static void addActivityToCart(Activity activity) {

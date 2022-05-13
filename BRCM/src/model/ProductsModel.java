@@ -1,7 +1,6 @@
 package model;
 
 import java.sql.*;
-import model.classes.Product;
 
 public class ProductsModel {
 
@@ -13,6 +12,7 @@ public class ProductsModel {
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);
+            conn.close();
             return set;
 
         } catch (Exception e) {
@@ -27,6 +27,7 @@ public class ProductsModel {
         try {
             Statement stmnt = conn.createStatement();
             ResultSet set = stmnt.executeQuery(query);
+            conn.close();
             return set;
 
         } catch (Exception e) {

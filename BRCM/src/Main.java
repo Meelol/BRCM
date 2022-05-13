@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 
 import java.sql.*;
 
-import javax.swing.ImageIcon;
-
 public class Main extends Application {
 
     public static void main(String[] args) {

@@ -82,6 +82,8 @@ public class ShoppingCartController {
             view.setPreserveRatio(true);
             button.setGraphic(view);
             button.setPrefSize(50, 20);
+            button.setDisable(false);
+            button.autosize();
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -109,6 +111,7 @@ public class ShoppingCartController {
             view.setPreserveRatio(true);
             button.setGraphic(view);
             button.setPrefSize(50, 20);
+            button.setDisable(false);
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -169,10 +172,16 @@ public class ShoppingCartController {
         stage.show();
     }
 
-    public void printReceipt(){
-        Order order = new Order(Integer.valueOf(LoginController.broncoID), Cart.cart.getProductQuantity(), Cart.cart.getActivityQuantity(), discount);
-        order.printReceipt();
-        ShoppingCartModel.insertOrderToDB(order);
-        Cart.orderFulfilled();
+    public void printReceipt(ActionEvent event) throws IOException {
+        if (!Cart.cart.getActivityQuantity().isEmpty() || !Cart.cart.getProductQuantity().isEmpty()) {
+            int currentOrderNum = ShoppingCartModel.getCurrentOrderNum() + 1;
+            Order order = new Order(currentOrderNum, Integer.valueOf(LoginController.broncoID), Cart.cart.getProductQuantity(),
+                    Cart.cart.getActivityQuantity(), discount);
+            order.printReceipt();
+            ShoppingCartModel.insertOrderToDB(order);
+            order = null;
+            Cart.orderFulfilled();
+            refreshTable(event);
+        }
     }
 }

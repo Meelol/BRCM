@@ -3,7 +3,7 @@ package model.classes;
 public class Customer {
     public static enum Status {
         STUDENT, PROFESSOR, BOTH, STAFF
-    }
+    }   
 
     private int broncoID;
     private String password;

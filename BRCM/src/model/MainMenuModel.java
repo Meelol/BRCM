@@ -17,8 +17,9 @@ public class MainMenuModel {
             ResultSet rs1 = stmnt1.executeQuery(sql1);
             while (rs1.next()) {
                 user = rs1.getString("name");
-                System.out.println("Name " + user);
+                System.out.println("Welcome back " + user + "!");
             }
+            conn.close();
             return user;
 
         } catch (Exception e) {

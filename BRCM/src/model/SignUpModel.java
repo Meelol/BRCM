@@ -24,6 +24,7 @@ public class SignUpModel {
             stmnt.executeUpdate(insertCustomersql);
             stmnt.executeUpdate(insertAddresssql);
             System.out.println("Customer " + customer.getName() + " added successfully!");
+            conn.close();
             return true;
 
         } catch (SQLException e) {
@@ -53,6 +54,7 @@ public class SignUpModel {
 
             stmnt.executeUpdate(deleteAddresssql);
             System.out.println("Address deleted successfully!");
+            conn.close();
             return true;
         } catch (SQLException e) {
             System.out.println("SQL Error");

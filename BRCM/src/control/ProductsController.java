@@ -93,7 +93,7 @@ public class ProductsController {
             button.setGraphic(view);
             button.setPrefSize(50, 20);
             Product product = new Product(productID, productName, productPrice, button);
-            //Add to Cart Button Implementation
+            // Add to Cart Button Implementation
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -111,7 +111,7 @@ public class ProductsController {
         quantityTableColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         quantityTableColumn.setStyle("-fx-alignment: CENTER;");
         productsTableView.setItems(productsObservableList);
-        //Edit quantity value in TableView
+        // Edit quantity value in TableView
         productsTableView.setEditable(true);
         quantityTableColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         quantityTableColumn.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Product, String>>() {
@@ -162,7 +162,7 @@ public class ProductsController {
             button.setGraphic(view);
             button.setPrefSize(50, 20);
             Product product = new Product(productID, productName, productPrice, button);
-            //Add to Cart Button Implementation
+            // Add to Cart Button Implementation
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {

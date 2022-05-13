@@ -1,10 +1,6 @@
 package model.classes;
 
-import java.time.LocalDate;
-import java.time.Month;
-
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 
 public class Activity {
     private int productID;
@@ -47,10 +43,11 @@ public class Activity {
         return date;
     }
 
-    public void setButtonText(String text){
+    public void setButtonText(String text) {
         this.button.setText(text);
     }
-    public Button getButton(){
+
+    public Button getButton() {
         return this.button;
     }
 

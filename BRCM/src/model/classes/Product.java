@@ -18,6 +18,10 @@ public class Product {
         this.quantity = "0";
     }
 
+    public int getProductID() {
+        return this.productID;
+    }
+
     public float getUnitPrice() {
         return this.unitPrice;
     }
@@ -33,7 +37,8 @@ public class Product {
     public String getQuantity() {
         return this.quantity;
     }
-    public void setQuantity(String q){
+
+    public void setQuantity(String q) {
         this.quantity = q;
     }
 }

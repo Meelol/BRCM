@@ -14,6 +14,7 @@ public class LoginModel {
             Statement stmnt = conn.createStatement();
             String sql = "SELECT * FROM public.\"CUSTOMERS\" WHERE \"broncoID\"="+username+" AND \"password\"="+"\'"+password+"\'";
             ResultSet rs = stmnt.executeQuery(sql);
+            conn.close();
             return rs.next();
             
         }catch(Exception e){
@@ -21,13 +22,13 @@ public class LoginModel {
         }
     }
 
-        public static boolean isStaff(String username, String password){
+    public static boolean isStaff(String username, String password){
         conn = DBConnect.startConnection();
         try{
             Statement stmnt = conn.createStatement();
             String sql = "SELECT * FROM public.\"CUSTOMERS\" WHERE \"broncoID\"="+username+" AND \"password\"="+"\'"+password+"\' AND \"status\"="+3;
-            System.out.println(sql);
             ResultSet rs = stmnt.executeQuery(sql);
+            conn.close();
             return rs.next();
             
         }catch(Exception e){
